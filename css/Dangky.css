@@ -1,0 +1,238 @@
+* 
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html
+{
+  color: #333;
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
+}
+.main 
+{
+  background: url('../image/bannner.jpg');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+.form 
+{
+  background: rgb(0, 0, 0, 0.1);
+  width: 500px;
+  max-width: 400px;
+  height: 500px;
+  padding: 24px;
+  border-radius: 16px;
+  border: solid 5px rgb(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  box-shadow: 0px 0px 30px 20px rgb(0, 0, 0, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+}
+.form .heading {
+  font-size: 2rem;
+}
+.form .desc {
+  text-align: center;
+  color: #636d77;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 2.4rem;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+.form-group {
+  width: 100%;
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+
+.form-label,
+.form-message {
+  text-align: left;
+}
+
+.form-label {
+  font-weight: 700;
+  padding-bottom: 6px;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
+}
+
+.form-control {
+  height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #b3b3b3;
+  border-radius: 3px;
+  outline: none;
+  font-size: 1.4rem;
+}
+
+.form-control:hover {
+  border-color: #1dbfaf;
+}
+
+.form-group.invalid .form-control {
+  border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+
+.form-message {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
+}
+
+.form-submit {
+  outline: none;
+  background-color: #1dbfaf;
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: #1ac7b6;
+}
+
+.spacer {
+  margin-top: 36px;
+}
+
+header 
+{
+  display: flex;
+  color: #fefefe;
+  width: 90%;
+  height: 50px;
+  border-radius: 1rem;
+  margin-top: 30px;
+  margin-left: 100px;
+  background-color: rgb(239, 230, 230, 0.253);
+  backdrop-filter: blur(3px);
+  box-shadow: 8px 8px 15px rgb(0, 0, 0, 0.1),
+              -8px -8px 15px rgb(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: fixed;
+  z-index: 100;
+}
+.logo 
+{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+
+}
+.logo img 
+{
+  width: 40px;
+}
+.menu
+{
+  width: 50%;
+}
+.menu ul 
+{
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  height: 50px;
+  align-items: center;
+}
+.menu ul li 
+{
+  list-style: none;
+  margin-right: 30px;
+}
+.menu ul li a 
+{
+  text-decoration: none;
+  color: black;
+  font-size: 1.7rem;
+  font-weight: 500;
+  position: relative;
+}
+.menu ul li a::after
+{
+  content: '';
+  bottom: -3px;
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background-color: #fefefe;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0px;
+}
+.menu ul li a:hover,
+.menu ul li a:hover::after,
+.menu ul li a.active::after,
+.menu ul li a.active
+{
+  width: 100%;
+  left: 0;
+  font-weight: bold;
+}
+.search-bar
+{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+  color: #333;
+}
+.search-bar p 
+{
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 10px;
+}
+.search-bar input 
+{
+  background-color: #fefefe;
+  outline: none;
+  padding: 5px;
+  border-top-left-radius: 13px;
+  border-bottom-left-radius: 13px;
+  border: none;
+}
+.search-bar .search-icon {
+  background-color: #fefefe;
+  outline: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border: none;
+  color: #333;
+  font-size: 1rem; /* Tăng kích thước biểu tượng để dễ nhìn hơn */
+  padding: 7.5px; /* Điều chỉnh khoảng cách xung quanh biểu tượng */
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Căn giữa biểu tượng trong hộp */
+  cursor: pointer; /* Thêm hiệu ứng con trỏ chuột để người dùng biết rằng có thể nhấn */
+  transition: background-color 0.3s ease; /* Thêm hiệu ứng chuyển màu nền khi hover */
+}
+
+.search-bar .search-icon:hover {
+  background-color: #e0e0e0; /* Thay đổi màu nền khi hover */
+}

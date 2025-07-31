@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="../css/Dangky.css">
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<header>
+  <div class="logo">
+      <img src="\image\logo.png" alt="">
+  </div>
+  <div class="menu">
+      <ul>
+          <li><a href="./home.html" class="active">HOME</a></li>
+          <li><a href="#">PRODUCT</a></li>
+          <li><a href="#">SHOP</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="./Dangnhap.html">LOGIN <ion-icon name="person-outline"></ion-icon></a></li>
+      </ul>
+  </div>
+  <div class="search-bar">
+      <p>search</p>
+      <input type="text" name="" id="">
+      <div class="search-icon">
+          <ion-icon name="search-outline"></ion-icon>
+      </div>
+  </div>
+</header>  
+<div class="main">
+
+    <form action="" method="POST" class="form" id="form-1"> 
+      <h3 class="heading">Thành viên đăng ký</h3>
+      
+      <div class="spacer"></div>
+  
+      <div class="form-group">
+        <label for="fullname" class="form-label">Tên đầy đủ</label>
+        <input id="fullname" name="fullname" type="text" placeholder="VD: Long Vũ" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="password" class="form-label">Mật khẩu</label>
+        <input id="password" name="password" type="password" placeholder="Nhập mật khẩu" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <div class="form-group">
+        <label for="password_confirmation" class="form-label">Nhập lại mật khẩu</label>
+        <input id="password_confirmation" name="password_confirmation" placeholder="Nhập lại mật khẩu" type="password" class="form-control">
+        <span class="form-message"></span>
+      </div>
+  
+      <button class="form-submit">Đăng ký</button>
+    </form>
+  
+  </div>
+  <script src="../js/Dangky.js"></script>
+  <script>
+    Validator({
+        form: '#form-1',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequired('#fullName', 'Vui lòng nhập đầy đủ họ và tên của bạn'),
+            Validator.isEmail('#email', 'Vui lòng nhập đúng Email của bạn'),
+            Validator.minLength('#password', 6),
+            Validator.isConfirmed('#password_confirmation', function () {
+              return document.querySelector('#form-1 #password').value; 
+            }, 'Mật khẩu nhập lại không chính xác'),
+        ]
+    });
+  </script>
